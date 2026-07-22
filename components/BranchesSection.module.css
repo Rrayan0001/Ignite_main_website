@@ -1,0 +1,193 @@
+.section {
+  position: relative;
+  background-color: var(--bg-secondary);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 8px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 59, 48, 0.4);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.cardPrime {
+  border-color: rgba(255, 59, 48, 0.3);
+  background: linear-gradient(180deg, #222228 0%, #1A1A1E 100%);
+}
+
+.cardHeader {
+  margin-bottom: 20px;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.branchTag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  background: var(--accent-tomato-dim);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.branchTagPrime {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  background: var(--accent-tomato);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.cafeTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #FF7A59;
+  background: rgba(255, 122, 89, 0.15);
+  border: 1px solid rgba(255, 122, 89, 0.3);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.branchName {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin-top: 6px;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  margin-bottom: 24px;
+}
+
+.infoLine {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.infoIcon {
+  color: var(--accent-tomato);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.phoneLink {
+  color: #FFFFFF;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.phoneLink:hover {
+  color: var(--accent-tomato);
+}
+
+/* Cafe Spotlight Box */
+.cafeSpotlight {
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.25);
+  border-radius: 6px;
+  padding: 14px 16px;
+}
+
+.cafeHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.cafeTitle {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: var(--accent-tomato);
+}
+
+.cafeDesc {
+  font-size: 12px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #D1D5DB;
+}
+
+.mapWrap {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

@@ -1,0 +1,225 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(10, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  position: relative;
+  background: #18181C;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px 28px;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.closeBtn:hover {
+  color: #FFFFFF;
+  background: var(--accent-tomato-dim);
+  border-color: var(--accent-tomato);
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  margin-bottom: 8px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.input,
+.select,
+.textarea {
+  background: #101012;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  border-color: var(--accent-tomato);
+  box-shadow: 0 0 12px var(--accent-tomato-dim);
+}
+
+.select option {
+  background: #18181C;
+  color: #FFFFFF;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+/* Branch Selection Cards */
+.branchSelectGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.branchOption {
+  background: #101012;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: var(--text-muted);
+}
+
+.branchOptionActive {
+  background: rgba(255, 59, 48, 0.12);
+  border-color: var(--accent-tomato);
+  color: #FFFFFF;
+}
+
+.branchOptionTitle {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.3;
+}
+
+.branchOptionSub {
+  display: block;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Success State */
+.successState {
+  text-align: center;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successIcon {
+  margin-bottom: 16px;
+}
+
+.successTitle {
+  font-family: var(--font-display);
+  font-size: 36px;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.successText {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 440px;
+}
+
+.highlight {
+  color: var(--accent-tomato);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 640px) {
+  .row, .branchSelectGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -3,14 +3,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, ShieldAlert } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
+  { label: 'Branches', href: '/branches' },
   { label: 'Concept', href: '/concept' },
   { label: 'Facilities', href: '/facilities' },
   { label: 'Programs', href: '/classes' },
   { label: 'Membership', href: '/membership' },
+  { label: 'Trainers', href: '/trainers' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];
 
@@ -27,7 +30,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`} id="navbar">
       <div className={styles.container}>
-        {/* Logo with transparent PNG image */}
+        {/* Logo */}
         <Link href="/" className={styles.logo} aria-label="IGNITE FITNESS Home">
           <div className={styles.logoImgWrap}>
             <Image
@@ -54,10 +57,16 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
+          <li>
+            <Link href="/admin" className={styles.adminBadgeLink} id="nav-admin-link">
+              <ShieldAlert size={14} />
+              <span>Admin</span>
+            </Link>
+          </li>
         </ul>
 
         {/* CTA */}
-        <Link href="/membership" className={`btn btn-primary ${styles.cta}`} id="nav-join-btn">
+        <Link href="/branches" className={`btn btn-primary ${styles.cta}`} id="nav-join-btn">
           <span>Join Now</span>
           <ArrowUpRight size={16} />
         </Link>
@@ -84,7 +93,12 @@ export default function Navbar() {
             </li>
           ))}
           <li>
-            <Link href="/membership" className={`btn btn-primary ${styles.mobileCta}`} onClick={() => setMenuOpen(false)}>
+            <Link href="/admin" className={styles.mobileLink} style={{ color: 'var(--accent-tomato)' }} onClick={() => setMenuOpen(false)}>
+              Admin Panel
+            </Link>
+          </li>
+          <li>
+            <Link href="/branches" className={`btn btn-primary ${styles.mobileCta}`} onClick={() => setMenuOpen(false)}>
               <span>Join Now</span>
               <ArrowUpRight size={16} />
             </Link>
