@@ -76,7 +76,7 @@ export default function HeroSection() {
         </div>
 
         {/* Bottom Stats Row */}
-        <div className={styles.statsRow}>
+        <div className={styles.statsRow} data-aos="fade-up" data-aos-delay="500">
           <div className={styles.stats}>
             <div className={styles.statCard}>
               <ShieldCheck className={styles.statIcon} size={22} />

@@ -107,7 +107,7 @@ export default function MembershipPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Membership Options</p>
           <h1 className={styles.heroTitle}>
             CHOOSE YOUR<br />
@@ -123,10 +123,12 @@ export default function MembershipPage() {
       <section className="section">
         <div className="container">
           <div className={styles.pricingGrid}>
-            {plans.map((plan) => (
+            {plans.map((plan, i) => (
               <div
                 key={plan.id}
-                className={`${styles.card} ${plan.popular ? styles.popular : ''}`}
+                className={`${styles.card} ${plan.popular ? styles.popular : ''} card-press`}
+                data-aos={plan.popular ? 'flip-up' : 'zoom-in'}
+                data-aos-delay={i * 150}
               >
                 {plan.popular && (
                   <div className={styles.popularBadge}>Most Popular</div>
@@ -170,16 +172,16 @@ export default function MembershipPage() {
       <section className={`section section--dark ${styles.faqSection}`}>
         <div className="container">
           <div className={styles.faqHeader}>
-            <p className="label">Frequently Asked Questions</p>
-            <div className="gold-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-up">Frequently Asked Questions</p>
+            <div className="gold-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-up" data-aos-delay="200">
               GOT <span style={{ color: 'var(--accent-tomato)' }}>QUESTIONS?</span>
             </h2>
           </div>
 
           <div className={styles.faqGrid}>
             {faqs.map((faq, i) => (
-              <div key={i} className={styles.faqCard}>
+              <div key={i} className={`${styles.faqCard} card-press`} data-aos="fade-up" data-aos-delay={i * 100}>
                 <h3 className={styles.faqQuestion}>{faq.q}</h3>
                 <p className={styles.faqAnswer}>{faq.a}</p>
               </div>

@@ -29,7 +29,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Contact Ignite Fitness</p>
           <h1 className={styles.heroTitle}>
             GET IN<br />
@@ -46,10 +46,9 @@ export default function ContactPage() {
         <div className="container">
           <div className={styles.grid}>
             {/* Left: Contact Info */}
-            <div className={styles.infoCol}>
+            <div className={styles.infoCol} data-aos="fade-right">
               <p className="label">Visit Our Gyms</p>
               <div className="gold-line" style={{ marginTop: 16, marginBottom: 32 }} />
-
               <h2 className={styles.infoHeading}>
                 DHARWAD <span className={styles.accentText}>LOCATIONS</span>.
               </h2>
@@ -58,7 +57,7 @@ export default function ContactPage() {
               </p>
 
               <div className={styles.cards}>
-                <div className={styles.card}>
+                <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="0">
                   <span className={styles.cardIcon}>📍</span>
                   <div>
                     <h3 className={styles.cardTitle}>Malmaddi Branch (Main)</h3>
@@ -68,7 +67,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className={styles.card}>
+                <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="100">
                   <span className={styles.cardIcon}>📍</span>
                   <div>
                     <h3 className={styles.cardTitle}>Ignite Prime (Gandhi Nagar)</h3>
@@ -78,7 +77,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className={styles.card}>
+                <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="200">
                   <span className={styles.cardIcon}>📞</span>
                   <div>
                     <h3 className={styles.cardTitle}>Phone & Enquiry</h3>
@@ -86,7 +85,7 @@ export default function ContactPage() {
                   </div>
                 </div>
 
-                <div className={styles.card}>
+                <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="300">
                   <span className={styles.cardIcon}>🕐</span>
                   <div>
                     <h3 className={styles.cardTitle}>Hours</h3>
@@ -97,7 +96,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Contact Form */}
-            <div className={styles.formCol}>
+            <div className={styles.formCol} data-aos="fade-left" data-aos-delay="200">
               {submitted ? (
                 <div className={styles.success}>
                   <span className={styles.successIcon}>✓</span>

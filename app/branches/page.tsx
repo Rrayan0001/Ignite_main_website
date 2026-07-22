@@ -17,7 +17,7 @@ export default function BranchesPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Multi-Branch Fitness</p>
           <h1 className={styles.heroTitle}>
             OUR <span className={styles.accent}>BRANCHES</span>.

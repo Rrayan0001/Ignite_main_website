@@ -39,7 +39,7 @@ export default function ConceptPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Our Concept</p>
           <h1 className={styles.heroTitle}>
             IGNITE YOUR<br />
@@ -55,14 +55,14 @@ export default function ConceptPage() {
       <section className={`section ${styles.mission}`}>
         <div className="container">
           <div className={styles.missionGrid}>
-            <div>
+            <div data-aos="fade-right">
               <p className="label">Our Mission</p>
               <div className="gold-line" style={{ marginTop: 16 }} />
               <h2 className={styles.missionTitle}>
                 WE BELIEVE FITNESS IS <span className={styles.accent}>SCIENTIFIC</span>.
               </h2>
             </div>
-            <div>
+            <div data-aos="fade-left" data-aos-delay="200">
               <p className={styles.missionText}>
                 Ignite Fitness was established on PB Road, Dharwad to bring international-standard strength equipment,
                 biomechanics-based personal coaching, and structured conditioning to fitness enthusiasts.
@@ -80,15 +80,15 @@ export default function ConceptPage() {
       <section className={`section section--dark ${styles.pillars}`}>
         <div className="container">
           <div className={styles.pillarsHeader}>
-            <p className="label">Our Pillars</p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-up">Our Pillars</p>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-up" data-aos-delay="200">
               WHAT <span className={styles.accent}>DRIVES US</span>.
             </h2>
           </div>
           <div className={styles.pillarsGrid}>
-            {pillars.map((p) => (
-              <div key={p.num} className={styles.pillar}>
+            {pillars.map((p, i) => (
+              <div key={p.num} className={`${styles.pillar} card-press`} data-aos="fade-up" data-aos-delay={i * 100}>
                 <span className={styles.pillarNum}>{p.num}</span>
                 <h3 className={styles.pillarTitle}>{p.title}</h3>
                 <p className={styles.pillarDesc}>{p.desc}</p>
@@ -102,15 +102,15 @@ export default function ConceptPage() {
       <section className={`section ${styles.numbers}`}>
         <div className="container">
           <div className={styles.numbersGrid}>
-            {[
-              { num: '2', label: 'Dharwad Branches' },
-              { num: '1000+', label: 'Active Members' },
-              { num: '4.9★', label: 'Average Rating' },
-              { num: '15+', label: 'Certified Trainers' },
-              { num: '60kg+', label: 'Dumbbell Range' },
-              { num: '100%', label: 'Dedicated Focus' },
-            ].map((s) => (
-              <div key={s.label} className={styles.numberCard}>
+{[
+               { num: '2', label: 'Dharwad Branches' },
+               { num: '1000+', label: 'Active Members' },
+               { num: '4.9★', label: 'Average Rating' },
+               { num: '15+', label: 'Certified Trainers' },
+               { num: '60kg+', label: 'Dumbbell Range' },
+               { num: '100%', label: 'Dedicated Focus' },
+             ].map((s, i) => (
+              <div key={s.label} className={styles.numberCard} data-aos="zoom-in" data-aos-delay={i * 80}>
                 <span className={styles.numberVal}>{s.num}</span>
                 <span className={styles.numberLabel}>{s.label}</span>
               </div>

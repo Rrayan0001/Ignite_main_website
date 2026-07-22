@@ -82,13 +82,13 @@ export default function ClassesSection() {
       <div className="container">
         <div className={styles.header}>
           <div>
-            <p className="label">Training Programs</p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-right">Training Programs</p>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-right" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-right" data-aos-delay="200">
               EXPLORE OUR <span style={{ color: 'var(--accent-tomato)' }}>PROGRAMS</span>.
             </h2>
           </div>
-          <div className={styles.controls}>
+          <div className={styles.controls} data-aos="zoom-in" data-aos-delay="300">
             <button className={styles.arrow} onClick={() => scroll('left')} aria-label="Scroll left" id="classes-scroll-left">
               <ChevronLeft size={20} />
             </button>
@@ -105,8 +105,8 @@ export default function ClassesSection() {
       {/* Scrollable track */}
       <div className={styles.trackWrapper}>
         <div className={styles.track} ref={trackRef}>
-          {programs.map((cls) => (
-            <div key={cls.id} className={styles.card} id={`program-${cls.id}`}>
+          {programs.map((cls, i) => (
+            <div key={cls.id} className={`${styles.card} card-press`} id={`program-${cls.id}`} data-aos="fade-up" data-aos-delay={i * 80}>
               <div className={styles.cardHeader} style={{ borderColor: cls.color }}>
                 <div className={styles.classIcon}>
                   <cls.Icon size={24} color={cls.color} />

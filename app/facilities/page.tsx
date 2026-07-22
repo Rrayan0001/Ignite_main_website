@@ -25,7 +25,7 @@ export default function FacilitiesPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">World-Class Facilities</p>
           <h1 className={styles.heroTitle}>
             DHARWAD'S PREMIER<br />
@@ -38,15 +38,15 @@ export default function FacilitiesPage() {
       <section className="section">
         <div className="container">
           <div className={styles.intro}>
-            <p className="label">Training Arenas</p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-up">Training Arenas</p>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-up" data-aos-delay="200">
               EXPLORE THE <span className={styles.accent}>FACILITIES</span>.
             </h2>
           </div>
           <div className={styles.grid}>
-            {zones.map((z) => (
-              <div key={z.title} className={styles.card}>
+            {zones.map((z, i) => (
+              <div key={z.title} className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay={i * 100}>
                 <div className={styles.cardHead}>
                   <div className={styles.cardLeft}>
                     <span className={styles.icon}>{z.icon}</span>

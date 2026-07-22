@@ -35,16 +35,16 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
     <section className={`section ${styles.section}`} id="branches">
       <div className="container">
         {showTitle && (
-          <div className={styles.header}>
-            <p className="label">
+          <div className={styles.header} data-aos="fade-up">
+            <p className="label" data-aos="fade-up">
               <MapPin size={14} color="var(--accent-tomato)" />
               <span>Multi-Branch Fitness Destination</span>
             </p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-up" data-aos-delay="200">
               OUR <span style={{ color: 'var(--accent-tomato)' }}>BRANCHES</span> IN DHARWAD.
             </h2>
-            <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }}>
+            <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }} data-aos="fade-up" data-aos-delay="300">
               Two world-class gym facilities on PB Road. Select your branch to explore equipment, address, and admission details.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
 
         <div className={styles.grid}>
           {/* Branch 1 Card */}
-          <div className={styles.card} id="branch-malmaddi-card">
+          <div className={`${styles.card} card-press`} id="branch-malmaddi-card" data-aos="zoom-in" data-aos-delay="0">
             <div className={styles.cardHeader}>
               <span className={styles.branchTag}>Branch 1 · Main Facility</span>
               <h3 className={styles.branchName}>Malmaddi Branch (Main)</h3>
@@ -105,7 +105,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
           </div>
 
           {/* Branch 2 Card */}
-          <div className={`${styles.card} ${styles.cardPrime}`} id="branch-prime-card">
+          <div className={`${styles.card} ${styles.cardPrime} card-press`} id="branch-prime-card" data-aos="zoom-in" data-aos-delay="150">
             <div className={styles.cardHeader}>
               <div className={styles.badgeRow}>
                 <span className={styles.branchTagPrime}>Branch 2 · Ignite Prime</span>

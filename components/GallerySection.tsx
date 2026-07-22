@@ -27,21 +27,21 @@ export default function GallerySection() {
     <section className={`section section--dark ${styles.section}`} id="gallery">
       <div className="container">
         <div className={styles.header}>
-          <p className="label">
+          <p className="label" data-aos="fade-right">
             <Camera size={14} color="var(--accent-tomato)" />
             <span>Visual Tour</span>
           </p>
-          <div className="neon-line" style={{ marginTop: 16 }} />
-          <h2 className="display-md" style={{ marginTop: 8 }}>
+          <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-right" data-aos-delay="100" />
+          <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-right" data-aos-delay="200">
             GYM <span style={{ color: 'var(--accent-tomato)' }}>GALLERY</span>.
           </h2>
-          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }}>
+          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }} data-aos="fade-up" data-aos-delay="300">
             Take a visual tour of our Dharwad gym facilities, workout arenas, and the in-house Ignite Cafe.
           </p>
         </div>
 
         {/* Filter buttons */}
-        <div className={styles.filterBar}>
+        <div className={styles.filterBar} data-aos="fade-up" data-aos-delay="400">
           {categories.map((cat) => (
             <button
               key={cat}
@@ -56,8 +56,8 @@ export default function GallerySection() {
 
         {/* Gallery grid */}
         <div className={styles.grid}>
-          {filtered.map((item) => (
-            <div key={item.id} className={styles.card}>
+          {filtered.map((item, i) => (
+            <div key={item.id} className={`${styles.card} card-press`} data-aos="zoom-in" data-aos-delay={i * 100}>
               <div className={styles.imgWrap}>
                 <Image
                   src={item.img}

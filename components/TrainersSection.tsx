@@ -37,22 +37,22 @@ export default function TrainersSection() {
     <section className={`section ${styles.section}`} id="trainers">
       <div className="container">
         <div className={styles.header}>
-          <p className="label">
+          <p className="label" data-aos="fade-down">
             <Award size={14} color="var(--accent-tomato)" />
             <span>Certified Fitness Coaching</span>
           </p>
-          <div className="neon-line" style={{ marginTop: 16 }} />
-          <h2 className="display-md" style={{ marginTop: 8 }}>
+          <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-down" data-aos-delay="100" />
+          <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-down" data-aos-delay="200">
             MEET OUR <span style={{ color: 'var(--accent-tomato)' }}>TRAINERS</span>.
           </h2>
-          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }}>
+          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }} data-aos="fade-down" data-aos-delay="300">
             Dedicated 1-on-1 certified trainers specializing in form correction, biomechanics, and goal transformation.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {trainers.map((t) => (
-            <div key={t.id} className={styles.card} id={`trainer-${t.id}`}>
+          {trainers.map((t, i) => (
+            <div key={t.id} className={`${styles.card} card-press`} id={`trainer-${t.id}`} data-aos="fade-up" data-aos-delay={i * 150}>
               <div className={styles.imgWrap}>
                 <Image
                   src={t.img}

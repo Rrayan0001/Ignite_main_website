@@ -352,3 +352,41 @@ ul {
   background: var(--accent-tomato);
   color: #FFFFFF;
 }
+
+/* ============================================
+   TAP FEEDBACK (TOUCH / MOBILE)
+   Hover doesn't fire on touch devices, so give
+   cards & buttons a tactile squish on press.
+   Scoped to (hover: none) so desktop hover is untouched.
+   ============================================ */
+@media (hover: none) {
+  .btn:active {
+    transform: translateY(0) scale(0.97);
+    transition: transform 0.12s ease;
+  }
+
+  .card-press {
+    transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .card-press:active {
+    transform: scale(0.97);
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY — REDUCED MOTION
+   Respect users who prefer minimal motion. Disables
+   autoplay loops (marquee, Ken-Burns, embers) and
+   collapses transitions/AOS reveals to instant.
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

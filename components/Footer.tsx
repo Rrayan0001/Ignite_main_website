@@ -45,7 +45,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer} id="footer">
       {/* CTA Banner */}
-      <div className={styles.ctaBanner}>
+      <div className={styles.ctaBanner} data-aos="fade-up">
         <div className={styles.ctaContent}>
           <h2 className={styles.ctaHeading}>
             READY TO IGNITE YOUR <span className={styles.ctaAccent}>FITNESS?</span>
@@ -68,7 +68,7 @@ export default function Footer() {
       <div className={styles.main}>
         <div className={styles.container}>
           {/* Brand col */}
-          <div className={styles.brand}>
+          <div className={styles.brand} data-aos="fade-up">
             <Link href="/" className={styles.logo} aria-label="IGNITE FITNESS">
               <Image
                 src="/bg_remove_logo.png"
@@ -111,8 +111,8 @@ export default function Footer() {
           </div>
 
           {/* Link cols */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category} className={styles.col}>
+          {Object.entries(footerLinks).map(([category, links], i) => (
+            <div key={category} className={styles.col} data-aos="fade-up" data-aos-delay={i * 100}>
               <h3 className={styles.colTitle}>{category}</h3>
               <ul className={styles.colLinks}>
                 {links.map((link) => (

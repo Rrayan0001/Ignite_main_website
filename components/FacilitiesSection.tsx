@@ -54,22 +54,22 @@ export default function FacilitiesSection() {
         {/* Header */}
         <div className={styles.header}>
           <div>
-            <p className="label">World-Class Facilities</p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-down">World-Class Facilities</p>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-down" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-down" data-aos-delay="200">
               POWERFUL ZONES.<br />
               <span style={{ color: 'var(--accent-tomato)' }}>PROVEN</span> RESULTS.
             </h2>
           </div>
-          <p className="body-lg" style={{ maxWidth: 420 }}>
+          <p className="body-lg" style={{ maxWidth: 420 }} data-aos="fade-up" data-aos-delay="300">
             Every training arena at Ignite Fitness Dharwad is engineered for progressive overload and peak physical output.
           </p>
         </div>
 
         {/* Grid */}
         <div className={styles.grid}>
-          {facilities.map((f) => (
-            <div key={f.id} className={styles.card} id={`facility-${f.id}`}>
+          {facilities.map((f, i) => (
+            <div key={f.id} className={`${styles.card} card-press`} id={`facility-${f.id}`} data-aos="fade-up" data-aos-delay={i * 100}>
               <div className={styles.cardInner}>
                 <div className={styles.cardTop}>
                   <div className={styles.icon}>

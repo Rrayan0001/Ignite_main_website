@@ -78,25 +78,27 @@ export default function MembershipSection() {
     <section className={`section section--dark ${styles.section}`} id="membership">
       <div className="container">
         <div className={styles.header}>
-          <p className="label">
+          <p className="label" data-aos="fade-up">
             <ShieldCheck size={14} color="var(--accent-tomato)" />
             <span>Membership Options</span>
           </p>
-          <div className="neon-line" style={{ marginTop: 16 }} />
-          <h2 className="display-md" style={{ marginTop: 8, marginBottom: 16 }}>
+          <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+          <h2 className="display-md" style={{ marginTop: 8, marginBottom: 16 }} data-aos="fade-up" data-aos-delay="200">
             YOUR <span style={{ color: 'var(--accent-tomato)' }}>MEMBERSHIP</span>.
           </h2>
-          <p className="body-lg" style={{ maxWidth: 560 }}>
+          <p className="body-lg" style={{ maxWidth: 560 }} data-aos="fade-up" data-aos-delay="300">
             Choose the membership tier that fits your goals. Visit us at Malmaddi or Gandhi Nagar, Dharwad or call +91 81979 17330.
           </p>
         </div>
 
         <div className={styles.grid}>
-          {plans.map((plan) => (
+          {plans.map((plan, i) => (
             <div
               key={plan.id}
-              className={`${styles.card} ${plan.popular ? styles.popular : ''}`}
+              className={`${styles.card} ${plan.popular ? styles.popular : ''} card-press`}
               id={`plan-${plan.id}`}
+              data-aos={plan.popular ? 'flip-up' : 'zoom-in'}
+              data-aos-delay={i * 150}
             >
               {plan.popular && (
                 <div className={styles.popularBadge}>

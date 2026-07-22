@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import WelcomeAnimationWrapper from "@/components/WelcomeAnimationWrapper";
+import AosProvider from "@/components/AosProvider";
+import "aos/dist/aos.css";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body suppressHydrationWarning>
         <WelcomeAnimationWrapper />
-        {children}
+        <AosProvider>{children}</AosProvider>
       </body>
     </html>
   );

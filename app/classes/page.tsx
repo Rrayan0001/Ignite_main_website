@@ -55,7 +55,7 @@ export default function ClassesPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Programs & Services</p>
           <h1 className={styles.heroTitle}>
             TRAINING<br />
@@ -71,16 +71,16 @@ export default function ClassesPage() {
       <section className="section">
         <div className="container">
           <div className={styles.scheduleHeader}>
-            <p className="label">What We Offer</p>
-            <div className="neon-line" style={{ marginTop: 16 }} />
-            <h2 className="display-md" style={{ marginTop: 8 }}>
+            <p className="label" data-aos="fade-up">What We Offer</p>
+            <div className="neon-line" style={{ marginTop: 16 }} data-aos="fade-up" data-aos-delay="100" />
+            <h2 className="display-md" style={{ marginTop: 8 }} data-aos="fade-up" data-aos-delay="200">
               TRANSFORMATION <span className={styles.accent}>PATHWAYS</span>.
             </h2>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '24px' }}>
-            {programsList.map((p) => (
-              <div key={p.title} style={{
+            {programsList.map((p, i) => (
+              <div key={p.title} className="card-press" data-aos="fade-up" data-aos-delay={i * 120} style={{
                 background: 'var(--bg-card)',
                 border: '1px solid var(--border-card)',
                 borderRadius: '6px',

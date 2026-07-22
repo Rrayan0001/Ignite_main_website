@@ -17,7 +17,7 @@ export default function TrainersPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Certified Fitness Professionals</p>
           <h1 className={styles.heroTitle}>
             OUR <span className={styles.accent}>COACHES</span>.

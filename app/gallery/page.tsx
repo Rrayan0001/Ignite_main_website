@@ -17,7 +17,7 @@ export default function GalleryPage() {
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
-        <div className={styles.heroContent}>
+        <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">Photo Gallery</p>
           <h1 className={styles.heroTitle}>
             VISUAL <span className={styles.accent}>GALLERY</span>.

@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock } from 'lucide-react';
+import { MapPin, Phone, Clock, ArrowUpRight } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon } from '@/components/Icons';
 import {
   PHONE_NUMBER,
@@ -13,82 +13,99 @@ import {
 } from '@/lib/constants';
 import styles from './LocationSection.module.css';
 
-const hours = [
-  { day: 'Monday – Saturday', time: '6:00 AM – 11:00 PM' },
-  { day: 'Sunday', time: 'Closed' },
-];
-
 export default function LocationSection() {
   return (
     <section className={`section ${styles.section}`} id="locations">
       <div className="container">
+        {/* Header */}
         <div className={styles.header}>
-          <p className="label">
+          <div className={styles.labelBadge}>
             <MapPin size={14} color="var(--accent-tomato)" />
-            <span>Locations & Timing</span>
-          </p>
-          <div className="neon-line" style={{ marginTop: 16 }} />
-          <h2 className="display-md" style={{ marginTop: 8 }}>
-            VISIT <span style={{ color: 'var(--accent-tomato)' }}>IGNITE FITNESS</span>.
+            <span>Locations & Timings</span>
+          </div>
+          <h2 className={styles.title}>
+            VISIT <span className={styles.accentText}>IGNITE FITNESS</span>.
           </h2>
-          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }}>
-            Conveniently located on PB Road in Malmaddi and Gandhi Nagar, Dharwad. Visit during operational hours or book a consultation call.
+          <p className={styles.subtitle}>
+            Conveniently located on PB Road in Malmaddi and Gandhi Nagar, Dharwad. Visit during operational hours or book a consultation.
           </p>
         </div>
 
+        {/* 2-Column Grid */}
         <div className={styles.grid}>
-          {/* Info Side */}
+          {/* Left Column: Branch Cards & Details */}
           <div className={styles.infoCol}>
-            {/* Branch 1 */}
-            <div className={styles.branchBlock}>
-              <div className={styles.branchHeader}>
-                <MapPin size={20} color="var(--accent-tomato)" />
-                <h3 className={styles.branchTitle}>Malmaddi Branch (Main)</h3>
+            {/* Branch 1 Card */}
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconCircle}>
+                  <MapPin size={18} color="var(--accent-tomato)" />
+                </div>
+                <div>
+                  <span className={styles.cardTag}>Branch 1 · Main Facility</span>
+                  <h3 className={styles.cardTitle}>Malmaddi Branch</h3>
+                </div>
               </div>
-              <p className={styles.branchAddr}>{BRANCH_1_ADDRESS}</p>
+              <p className={styles.cardAddr}>{BRANCH_1_ADDRESS}</p>
             </div>
 
-            {/* Branch 2 */}
-            <div className={styles.branchBlock}>
-              <div className={styles.branchHeader}>
-                <MapPin size={20} color="var(--accent-tomato)" />
-                <h3 className={styles.branchTitle}>Ignite Prime (Gandhi Nagar)</h3>
+            {/* Branch 2 Card */}
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconCircle}>
+                  <MapPin size={18} color="var(--accent-tomato)" />
+                </div>
+                <div>
+                  <span className={styles.cardTagPrime}>Branch 2 · Ignite Prime</span>
+                  <h3 className={styles.cardTitle}>Gandhi Nagar Branch</h3>
+                </div>
               </div>
-              <p className={styles.branchAddr}>{BRANCH_2_ADDRESS}</p>
+              <p className={styles.cardAddr}>{BRANCH_2_ADDRESS}</p>
             </div>
 
-            {/* Contact */}
-            <div className={styles.contactBlock}>
-              <div className={styles.contactHeader}>
-                <Phone size={20} color="var(--accent-tomato)" />
-                <h3 className={styles.branchTitle}>Phone & Enquiry</h3>
+            {/* Phone & Enquiry Card */}
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconCircle}>
+                  <Phone size={18} color="var(--accent-tomato)" />
+                </div>
+                <div>
+                  <span className={styles.cardTag}>Helpline & Support</span>
+                  <h3 className={styles.cardTitle}>Phone & Enquiry</h3>
+                </div>
               </div>
               <a href={PHONE_TEL} className={styles.phoneLink}>
                 {PHONE_NUMBER}
               </a>
             </div>
 
-            {/* Hours */}
-            <div className={styles.hoursBlock}>
-              <div className={styles.contactHeader}>
-                <Clock size={20} color="var(--accent-tomato)" />
-                <h3 className={styles.branchTitle}>Operating Hours</h3>
+            {/* Operating Hours Card */}
+            <div className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.iconCircle}>
+                  <Clock size={18} color="var(--accent-tomato)" />
+                </div>
+                <div>
+                  <span className={styles.cardTag}>Schedule</span>
+                  <h3 className={styles.cardTitle}>Operating Hours</h3>
+                </div>
               </div>
-              <ul className={styles.hoursList}>
-                <li className={styles.hoursRow}>
-                  <span className={styles.hoursDay}>Monday – Saturday</span>
-                  <span className={styles.hoursTime}>6:00 AM – 11:00 PM</span>
-                </li>
-                <li className={styles.hoursRow}>
-                  <span className={styles.hoursDay}>Sunday</span>
-                  <span className={styles.hoursTime} style={{ color: 'var(--accent-tomato)' }}>Closed</span>
-                </li>
-              </ul>
+
+              <div className={styles.hoursList}>
+                <div className={styles.hoursRow}>
+                  <span className={styles.hoursLabel}>Monday – Saturday</span>
+                  <span className={styles.hoursVal}>6:00 AM – 11:00 PM</span>
+                </div>
+                <div className={styles.hoursRow}>
+                  <span className={styles.hoursLabel}>Sunday</span>
+                  <span className={styles.hoursClosed}>Closed</span>
+                </div>
+              </div>
             </div>
 
-            {/* Socials */}
-            <div className={styles.socialsBlock}>
-              <span className={styles.socialLabel}>Follow Ignite Fitness</span>
+            {/* Social Links */}
+            <div className={styles.socialBox}>
+              <span className={styles.socialTitle}>Follow Ignite Fitness</span>
               <div className={styles.socialBtns}>
                 <a
                   href={INSTAGRAM_LINK}
@@ -114,28 +131,34 @@ export default function LocationSection() {
             </div>
           </div>
 
-          {/* Map Side */}
+          {/* Right Column: Google Maps Card */}
           <div className={styles.mapCol}>
-            <div className={styles.mapContainer}>
-              <iframe
-                src={BRANCH_1_MAP_EMBED}
-                width="100%"
-                height="100%"
-                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85)' }}
-                allowFullScreen
-                loading="lazy"
-                title="Ignite Fitness Dharwad Google Map"
-              />
+            <div className={styles.mapCard}>
+              <div className={styles.mapContainer}>
+                <iframe
+                  src={BRANCH_1_MAP_EMBED}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  title="Ignite Fitness Dharwad Google Map"
+                />
+              </div>
+              <div className={styles.mapFooter}>
+                <a
+                  href="https://maps.google.com/?q=SP+Laxmi+Heights+PB+Road+Malmaddi+Dharwad"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                  style={{ width: '100%', justifyContent: 'center' }}
+                  id="get-directions-btn"
+                >
+                  <span>Get Directions (PB Road Dharwad)</span>
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
             </div>
-            <a
-              href="https://maps.google.com/?q=SP+Laxmi+Heights+PB+Road+Malmaddi+Dharwad"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.mapCta}
-              id="get-directions-btn"
-            >
-              <span>Get Directions (PB Road Dharwad)</span>
-            </a>
           </div>
         </div>
       </div>
