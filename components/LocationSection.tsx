@@ -1,5 +1,16 @@
-import { MapPin, Phone, Clock, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon } from '@/components/Icons';
+import {
+  PHONE_NUMBER,
+  PHONE_TEL,
+  WHATSAPP_LINK,
+  INSTAGRAM_LINK,
+  BRANCH_1_ADDRESS,
+  BRANCH_2_ADDRESS,
+  BRANCH_1_MAP_EMBED,
+  OPERATING_HOURS_WEEKDAY,
+  OPERATING_HOURS_SUNDAY,
+} from '@/lib/constants';
 import styles from './LocationSection.module.css';
 
 const hours = [
@@ -9,127 +20,120 @@ const hours = [
 
 export default function LocationSection() {
   return (
-    <section className={`section ${styles.section}`} id="location">
+    <section className={`section ${styles.section}`} id="locations">
       <div className="container">
         <div className={styles.header}>
           <p className="label">
             <MapPin size={14} color="var(--accent-tomato)" />
-            <span>Our Branches</span>
+            <span>Locations & Timing</span>
           </p>
           <div className="neon-line" style={{ marginTop: 16 }} />
           <h2 className="display-md" style={{ marginTop: 8 }}>
             VISIT <span style={{ color: 'var(--accent-tomato)' }}>IGNITE FITNESS</span>.
           </h2>
+          <p className="body-lg" style={{ maxWidth: 560, marginTop: 12 }}>
+            Conveniently located on PB Road in Malmaddi and Gandhi Nagar, Dharwad. Visit during operational hours or book a consultation call.
+          </p>
         </div>
 
         <div className={styles.grid}>
-          {/* Left: Info */}
-          <div className={styles.info}>
-            {/* Main Branch */}
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
+          {/* Info Side */}
+          <div className={styles.infoCol}>
+            {/* Branch 1 */}
+            <div className={styles.branchBlock}>
+              <div className={styles.branchHeader}>
                 <MapPin size={20} color="var(--accent-tomato)" />
+                <h3 className={styles.branchTitle}>Malmaddi Branch (Main)</h3>
               </div>
-              <div>
-                <h3 className={styles.infoTitle}>Malmaddi Branch (Main)</h3>
-                <p className={styles.infoText}>
-                  2nd Floor, SP Laxmi Heights, PB Road,<br />
-                  Near NTTF BRTS Bus Stop, Shanti Nagar, Malmaddi,<br />
-                  Dharwad, Karnataka 580001
-                </p>
-              </div>
+              <p className={styles.branchAddr}>{BRANCH_1_ADDRESS}</p>
             </div>
 
             {/* Branch 2 */}
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
+            <div className={styles.branchBlock}>
+              <div className={styles.branchHeader}>
                 <MapPin size={20} color="var(--accent-tomato)" />
+                <h3 className={styles.branchTitle}>Ignite Prime (Gandhi Nagar)</h3>
               </div>
-              <div>
-                <h3 className={styles.infoTitle}>Ignite Prime (Gandhi Nagar)</h3>
-                <p className={styles.infoText}>
-                  4th Floor, Business Center, PB Road,<br />
-                  Gandhinagar, Dharwad, Karnataka 580004
-                </p>
-              </div>
+              <p className={styles.branchAddr}>{BRANCH_2_ADDRESS}</p>
             </div>
 
-            {/* Phone & Contact */}
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
+            {/* Contact */}
+            <div className={styles.contactBlock}>
+              <div className={styles.contactHeader}>
                 <Phone size={20} color="var(--accent-tomato)" />
+                <h3 className={styles.branchTitle}>Phone & Enquiry</h3>
               </div>
-              <div>
-                <h3 className={styles.infoTitle}>Phone & Enquiry</h3>
-                <p className={styles.infoText}>
-                  <a href="tel:+918197917330" className={styles.infoLink}>+91 81979 17330</a>
-                </p>
-              </div>
+              <a href={PHONE_TEL} className={styles.phoneLink}>
+                {PHONE_NUMBER}
+              </a>
             </div>
 
             {/* Hours */}
-            <div className={styles.hoursCard}>
-              <h3 className={styles.hoursTitle}>
-                <Clock size={18} color="var(--accent-tomato)" />
-                <span>Operating Hours</span>
-              </h3>
-              <table className={styles.hoursTable}>
-                <tbody>
-                  {hours.map((h) => (
-                    <tr key={h.day} className={styles.hoursRow}>
-                      <td className={styles.hoursDay}>{h.day}</td>
-                      <td className={styles.hoursTime}>{h.time}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className={styles.hoursBlock}>
+              <div className={styles.contactHeader}>
+                <Clock size={20} color="var(--accent-tomato)" />
+                <h3 className={styles.branchTitle}>Operating Hours</h3>
+              </div>
+              <ul className={styles.hoursList}>
+                <li className={styles.hoursRow}>
+                  <span className={styles.hoursDay}>Monday – Saturday</span>
+                  <span className={styles.hoursTime}>6:00 AM – 11:00 PM</span>
+                </li>
+                <li className={styles.hoursRow}>
+                  <span className={styles.hoursDay}>Sunday</span>
+                  <span className={styles.hoursTime} style={{ color: 'var(--accent-tomato)' }}>Closed</span>
+                </li>
+              </ul>
             </div>
 
-            {/* Social */}
-            <div className={styles.social}>
-              <p className={styles.socialLabel}>Follow Ignite Fitness</p>
-              <div className={styles.socialLinks}>
-                {[
-                  { name: 'Instagram', handle: '@theignitefitness', href: 'https://instagram.com', Icon: InstagramIcon },
-                  { name: 'WhatsApp', handle: '+91 81979 17330', href: 'https://wa.me/918197917330', Icon: WhatsAppIcon },
-                ].map(({ name, handle, href, Icon }) => (
-                  <a key={name} href={href} target="_blank" rel="noopener noreferrer"
-                    className={styles.socialLink} id={`social-${name.toLowerCase()}`}>
-                    <div className={styles.socialIcon}>
-                      <Icon size={20} color="var(--accent-tomato)" />
-                    </div>
-                    <div>
-                      <span className={styles.socialName}>{name}</span>
-                      <span className={styles.socialHandle}>{handle}</span>
-                    </div>
-                  </a>
-                ))}
+            {/* Socials */}
+            <div className={styles.socialsBlock}>
+              <span className={styles.socialLabel}>Follow Ignite Fitness</span>
+              <div className={styles.socialBtns}>
+                <a
+                  href={INSTAGRAM_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialBtn}
+                  id="loc-social-instagram"
+                >
+                  <InstagramIcon size={18} color="#FFFFFF" />
+                  <span>Instagram</span>
+                </a>
+                <a
+                  href={WHATSAPP_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialBtn}
+                  id="loc-social-whatsapp"
+                >
+                  <WhatsAppIcon size={18} color="#FFFFFF" />
+                  <span>WhatsApp</span>
+                </a>
               </div>
             </div>
           </div>
 
-          {/* Right: Map */}
+          {/* Map Side */}
           <div className={styles.mapCol}>
-            <div className={styles.mapWrap}>
+            <div className={styles.mapContainer}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.54123456789!2d75.01!3d15.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d7123456789a%3A0x123456789abcdef!2sDharwad%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                src={BRANCH_1_MAP_EMBED}
                 width="100%"
                 height="100%"
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85)' }}
                 allowFullScreen
                 loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Ignite Fitness Dharwad map"
+                title="Ignite Fitness Dharwad Google Map"
               />
             </div>
             <a
-              href="https://maps.google.com/?q=Ignite+Fitness+PB+Road+Dharwad"
+              href="https://maps.google.com/?q=SP+Laxmi+Heights+PB+Road+Malmaddi+Dharwad"
               target="_blank"
               rel="noopener noreferrer"
-              className={`btn btn-outline ${styles.directionsBtn}`}
+              className={styles.mapCta}
               id="get-directions-btn"
             >
-              <Navigation size={16} />
               <span>Get Directions (PB Road Dharwad)</span>
             </a>
           </div>

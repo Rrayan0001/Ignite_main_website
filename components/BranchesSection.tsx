@@ -2,8 +2,18 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { MapPin, Phone, Coffee, ArrowUpRight, ShieldCheck, Flame, Navigation } from 'lucide-react';
+import { MapPin, Phone, Coffee, ArrowUpRight, ShieldCheck, Flame } from 'lucide-react';
 import AdmissionModal from './AdmissionModal';
+import {
+  BRANCH_1_NAME,
+  BRANCH_1_ADDRESS,
+  BRANCH_1_MAP_EMBED,
+  BRANCH_2_NAME,
+  BRANCH_2_ADDRESS,
+  BRANCH_2_MAP_EMBED,
+  PHONE_NUMBER,
+  PHONE_TEL,
+} from '@/lib/constants';
 import styles from './BranchesSection.module.css';
 
 interface BranchesSectionProps {
@@ -51,12 +61,12 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
             <div className={styles.cardBody}>
               <div className={styles.infoLine}>
                 <MapPin size={18} className={styles.infoIcon} />
-                <span>2nd Floor, SP Laxmi Heights, PB Road, near NTTF BRTS Bus Stop, Shanti Nagar, Malmaddi, Dharwad 580001</span>
+                <span>{BRANCH_1_ADDRESS}</span>
               </div>
 
               <div className={styles.infoLine}>
                 <Phone size={18} className={styles.infoIcon} />
-                <a href="tel:+918197917330" className={styles.phoneLink}>+91 81979 17330</a>
+                <a href={PHONE_TEL} className={styles.phoneLink}>{PHONE_NUMBER}</a>
               </div>
 
               <div className={styles.featuresList}>
@@ -67,7 +77,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
 
               <div className={styles.mapWrap}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.54123456789!2d75.01!3d15.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d7123456789a%3A0x123456789abcdef!2sDharwad%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                  src={BRANCH_1_MAP_EMBED}
                   width="100%"
                   height="160"
                   style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85)' }}
@@ -107,12 +117,12 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
             <div className={styles.cardBody}>
               <div className={styles.infoLine}>
                 <MapPin size={18} className={styles.infoIcon} />
-                <span>4th Floor, Business Center, PB Road, Gandhinagar, Dharwad 580004</span>
+                <span>{BRANCH_2_ADDRESS}</span>
               </div>
 
               <div className={styles.infoLine}>
                 <Phone size={18} className={styles.infoIcon} />
-                <a href="tel:+918197917330" className={styles.phoneLink}>+91 81979 17330</a>
+                <a href={PHONE_TEL} className={styles.phoneLink}>{PHONE_NUMBER}</a>
               </div>
 
               {/* Ignite Cafe Spotlight Banner */}
@@ -134,7 +144,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
 
               <div className={styles.mapWrap}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3846.54123456789!2d75.01!3d15.45!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb8d7123456789a%3A0x123456789abcdef!2sDharwad%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1680000000000!5m2!1sen!2sin"
+                  src={BRANCH_2_MAP_EMBED}
                   width="100%"
                   height="160"
                   style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) brightness(0.85)' }}

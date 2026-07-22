@@ -2,16 +2,16 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Camera, Coffee, Flame, Dumbbell, HeartPulse } from 'lucide-react';
+import { Camera, Coffee } from 'lucide-react';
 import styles from './GallerySection.module.css';
 
 const galleryItems = [
   { id: 'g-1', title: 'Main Gym Floor & Treadmills', category: 'Cardio Suite', img: '/hero-gym.png', branch: 'Malmaddi' },
   { id: 'g-2', title: 'Dumbbells & Heavy Free Weights Zone', category: 'Strength Zone', img: '/concept-gym.png', branch: 'Malmaddi' },
   { id: 'g-3', title: 'CrossFit Arena & Functional Racks', category: 'CrossFit Arena', img: '/hero-gym.png', branch: 'Ignite Prime' },
-  { id: 'g-4', title: 'Ignite Cafe Protein Shake Lounge', category: 'Ignite Cafe', img: '/concept-gym.png', branch: 'Ignite Prime' },
-  { id: 'g-5', title: 'Olympic Power Cages & Bumper Racks', category: 'Strength Zone', img: '/hero-gym.png', branch: 'Malmaddi' },
-  { id: 'g-6', title: 'Cardio Suite & Integrated Metrics', category: 'Cardio Suite', img: '/concept-gym.png', branch: 'Ignite Prime' },
+  { id: 'g-4', title: 'Ignite Cafe Protein Shake Lounge', category: 'Ignite Cafe', img: '/ignite-cafe.png', branch: 'Ignite Prime' },
+  { id: 'g-5', title: 'Olympic Power Cages & Bumper Racks', category: 'Strength Zone', img: '/concept-gym.png', branch: 'Malmaddi' },
+  { id: 'g-6', title: 'Cardio Suite & Integrated Metrics', category: 'Cardio Suite', img: '/hero-gym.png', branch: 'Ignite Prime' },
 ];
 
 const categories = ['All', 'Strength Zone', 'CrossFit Arena', 'Ignite Cafe', 'Cardio Suite'];
@@ -63,6 +63,7 @@ export default function GallerySection() {
                   src={item.img}
                   alt={item.title}
                   fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
                   style={{ objectFit: 'cover' }}
                 />
                 <div className={styles.overlay}>

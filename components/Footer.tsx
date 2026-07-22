@@ -2,6 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { MapPin, Phone } from 'lucide-react';
 import { InstagramIcon, WhatsAppIcon, YoutubeIcon } from '@/components/Icons';
+import {
+  PHONE_NUMBER,
+  PHONE_TEL,
+  WHATSAPP_LINK,
+  INSTAGRAM_LINK,
+  YOUTUBE_LINK,
+} from '@/lib/constants';
 import styles from './Footer.module.css';
 
 const footerLinks = {
@@ -9,11 +16,11 @@ const footerLinks = {
     { label: 'Our Concept', href: '/concept' },
     { label: 'Facilities', href: '/facilities' },
     { label: 'Training Programs', href: '/classes' },
-    { label: '1-on-1 Coaching', href: '/classes' },
+    { label: '1-on-1 Coaching', href: '/trainers' },
     { label: 'CrossFit Arena', href: '/facilities' },
   ],
   Membership: [
-    { label: 'Join Ignite Fitness', href: '/membership' },
+    { label: 'Join Ignite Fitness', href: '/branches' },
     { label: 'Monthly Pass', href: '/membership' },
     { label: '3-Month Plan', href: '/membership' },
     { label: '6-Month Plan', href: '/membership' },
@@ -21,17 +28,17 @@ const footerLinks = {
   ],
   Support: [
     { label: 'Contact Us', href: '/contact' },
-    { label: 'FAQ', href: '/membership' },
-    { label: 'Malmaddi Branch', href: '/contact' },
-    { label: 'Gandhi Nagar Branch', href: '/contact' },
-    { label: 'Privacy Policy', href: '/contact' },
+    { label: 'FAQ & Pricing', href: '/membership' },
+    { label: 'Malmaddi Branch', href: '/branches' },
+    { label: 'Gandhi Nagar Branch', href: '/branches' },
+    { label: 'Privacy Policy', href: '/privacy' },
   ],
 };
 
 const socials = [
-  { Icon: InstagramIcon, label: 'Instagram', href: 'https://instagram.com' },
-  { Icon: WhatsAppIcon, label: 'WhatsApp', href: 'https://wa.me/918197917330' },
-  { Icon: YoutubeIcon, label: 'YouTube', href: 'https://youtube.com' },
+  { Icon: InstagramIcon, label: 'Instagram', href: INSTAGRAM_LINK },
+  { Icon: WhatsAppIcon, label: 'WhatsApp', href: WHATSAPP_LINK },
+  { Icon: YoutubeIcon, label: 'YouTube', href: YOUTUBE_LINK },
 ];
 
 export default function Footer() {
@@ -48,7 +55,7 @@ export default function Footer() {
           </p>
         </div>
         <div className={styles.ctaBtns}>
-          <Link href="/membership" className="btn btn-primary" id="footer-join-btn">
+          <Link href="/branches" className="btn btn-primary" id="footer-join-btn">
             Join Ignite Fitness
           </Link>
           <Link href="/contact" className="btn btn-outline" id="footer-trial-btn">
@@ -92,9 +99,9 @@ export default function Footer() {
               ))}
             </div>
             <div className={styles.contact}>
-              <a href="tel:+918197917330" className={styles.contactLink}>
+              <a href={PHONE_TEL} className={styles.contactLink}>
                 <Phone size={14} color="var(--accent-tomato)" />
-                <span>+91 81979 17330</span>
+                <span>{PHONE_NUMBER}</span>
               </a>
               <span className={styles.contactAddr}>
                 <MapPin size={14} color="var(--accent-tomato)" />
@@ -128,8 +135,8 @@ export default function Footer() {
             © {new Date().getFullYear()} IGNITE FITNESS. All rights reserved.
           </p>
           <div className={styles.bottomLinks}>
-            <Link href="/contact" className={styles.bottomLink}>Privacy Policy</Link>
-            <Link href="/contact" className={styles.bottomLink}>Terms of Service</Link>
+            <Link href="/privacy" className={styles.bottomLink}>Privacy Policy</Link>
+            <Link href="/terms" className={styles.bottomLink}>Terms of Service</Link>
           </div>
           <p className={styles.tagline}>
             <span className={styles.tomatoDot}>✦</span> Ignite Your Potential.

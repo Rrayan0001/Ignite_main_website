@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Award, ShieldCheck, Dumbbell, Flame } from 'lucide-react';
+import { Award, ShieldCheck } from 'lucide-react';
 import styles from './TrainersSection.module.css';
 
 const trainers = [
@@ -10,7 +10,7 @@ const trainers = [
     branch: 'Malmaddi & Gandhi Nagar',
     exp: '8+ Years Exp',
     spec: ['Biomechanics', 'Posture Correction', 'Heavy Strength'],
-    img: '/hero-gym.png',
+    img: '/trainer-vikram.png',
   },
   {
     id: 't-2',
@@ -19,7 +19,7 @@ const trainers = [
     branch: 'Ignite Prime (Gandhi Nagar)',
     exp: '6+ Years Exp',
     spec: ['CrossFit Arena', 'Fat Loss', 'Metabolic Conditioning'],
-    img: '/concept-gym.png',
+    img: '/trainer-sneha.png',
   },
   {
     id: 't-3',
@@ -28,7 +28,7 @@ const trainers = [
     branch: 'Malmaddi Branch',
     exp: '7+ Years Exp',
     spec: ['Muscle Hypertrophy', 'Powerlifting', 'Diet Coaching'],
-    img: '/hero-gym.png',
+    img: '/trainer-aniket.png',
   },
 ];
 
@@ -58,6 +58,7 @@ export default function TrainersSection() {
                   src={t.img}
                   alt={t.name}
                   fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
                   style={{ objectFit: 'cover' }}
                 />
                 <div className={styles.imgOverlay} />
