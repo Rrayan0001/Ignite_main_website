@@ -3,6 +3,7 @@ import WelcomeAnimationWrapper from "@/components/WelcomeAnimationWrapper";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://theignitefitness.com'),
   title: "IGNITE FITNESS — Premier Fitness Club & Gym | Dharwad",
   description:
     "Ignite Fitness is Dharwad's premier high-performance gym on PB Road. Elite personal trainers, heavy iron strength zones, CrossFit functional arena, and biomechanics-based transformation programs.",
@@ -32,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body suppressHydrationWarning>
         <WelcomeAnimationWrapper />
         {children}
