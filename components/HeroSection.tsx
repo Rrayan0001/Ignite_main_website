@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Flame, ArrowRight, Sparkles, Trophy, Users, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Sparkles, Trophy, Users, ShieldCheck } from 'lucide-react';
 import styles from './HeroSection.module.css';
 
 const bgImages = [
@@ -45,31 +45,7 @@ export default function HeroSection() {
 
       {/* Main hero wrapper */}
       <div className={styles.mainWrapper}>
-        {/* Top Ticker Tape */}
-        <div className={styles.ticker}>
-          <div className={styles.tickerTrack}>
-            {[
-              'Strength Training',
-              'Biomechanics',
-              'Muscle Hypertrophy',
-              'CrossFit Arena',
-              '1-on-1 Personal Coaching',
-              'PB Road Dharwad',
-              'Strength Training',
-              'Biomechanics',
-              'Muscle Hypertrophy',
-              'CrossFit Arena',
-              '1-on-1 Personal Coaching',
-              'PB Road Dharwad',
-            ].map((word, i) => (
-              <span key={i} className={styles.tickerItem}>
-                {word} <Flame className={styles.tickerIcon} size={12} />
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Central Content with Slide-In animation */}
+        {/* Central Content */}
         <div className={styles.content}>
           <div className={`label ${styles.eyebrow}`}>
             <Sparkles size={14} color="var(--accent-tomato)" />
@@ -89,7 +65,7 @@ export default function HeroSection() {
           </p>
 
           <div className={styles.ctas}>
-            <Link href="/membership" className="btn btn-primary" id="hero-join-btn">
+            <Link href="/branches" className="btn btn-primary" id="hero-join-btn">
               <span>Join Ignite Fitness</span>
               <ArrowRight size={18} />
             </Link>
@@ -99,7 +75,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Bottom Stats Row with Slide-up Animation */}
+        {/* Bottom Stats Row */}
         <div className={styles.statsRow}>
           <div className={styles.stats}>
             <div className={styles.statCard}>
