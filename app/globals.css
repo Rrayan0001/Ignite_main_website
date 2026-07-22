@@ -1,40 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* ============================================
+   DESIGN TOKENS — DARK GREY & TOMATO RED
+   ============================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-primary: #0F0F11;        /* Deep Obsidian Charcoal */
+  --bg-secondary: #161619;      /* Medium Dark Charcoal */
+  --bg-card: #1E1E22;           /* Elevated Card Grey */
+  --bg-card-hover: #26262B;     /* Interactive Hover Grey */
+
+  /* Tomato Red Accent System */
+  --accent-tomato: #FF3B30;       /* Neon Tomato Red */
+  --accent-tomato-hover: #E02E24; /* Deep Tomato Red */
+  --accent-tomato-light: #FF6961; /* Soft Tomato Highlight */
+  --accent-tomato-dim: rgba(255, 59, 48, 0.15);
+  --accent-tomato-glow: rgba(255, 59, 48, 0.45);
+
+  --text-primary: #FFFFFF;
+  --text-secondary: #E1E1E6;     /* High-contrast light grey */
+  --text-muted: #9A9AB0;         /* Mid grey for captions */
+
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-card: rgba(255, 255, 255, 0.08);
+
+  --font-display: 'Bebas Neue', cursive;
+  --font-body: 'Inter', sans-serif;
+
+  --nav-height: 80px;
+  --section-pad: clamp(60px, 8vw, 120px);
+  --container-max: 1280px;
+
+  --transition-fast: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-med: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.75s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
+  scroll-behavior: smooth;
+  font-size: 16px;
   overflow-x: hidden;
 }
 
 body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  overflow-x: hidden;
 }
 
 a {
@@ -42,8 +66,289 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ============================================
+   LAYOUT UTILITIES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(16px, 4vw, 80px);
+}
+
+.section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.section--dark {
+  background-color: var(--bg-secondary);
+}
+
+.section--card {
+  background-color: var(--bg-card);
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+.display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 9vw, 140px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 80px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+}
+
+.display-md {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 5vw, 56px);
+  line-height: 1.02;
+  letter-spacing: 0.02em;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.body-lg {
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* ============================================
+   BUTTONS: CENTRE FILL & LEFT FILL ANIMATIONS
+   ============================================ */
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Primary Button: CENTRE FILL ANIMATION */
+.btn-primary {
+  background: var(--accent-tomato);
+  color: #FFFFFF;
+  border: 1px solid var(--accent-tomato);
+  box-shadow: 0 4px 20px var(--accent-tomato-glow);
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #FFFFFF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), height 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-primary:hover::before {
+  width: 320%;
+  height: 320%;
+}
+
+.btn-primary:hover {
+  color: #0F0F11;
+  border-color: #FFFFFF;
+  box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Outline Button: LEFT FILL ANIMATION */
+.btn-outline {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-primary);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+}
+
+.btn-outline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--accent-tomato);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-outline:hover::before {
+  width: 100%;
+}
+
+.btn-outline:hover {
+  color: #FFFFFF;
+  border-color: var(--accent-tomato);
+  box-shadow: 0 6px 25px var(--accent-tomato-glow);
+  transform: translateY(-3px);
+}
+
+/* ============================================
+   SLIDE SHOW & SLIDE-IN KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
   }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide In From Bottom */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Hero Background Image Ken-Burns Slide */
+@keyframes heroSlideZoom {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Pulsing flame indicator */
+@keyframes pulse-flame {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px var(--accent-tomato-glow)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 16px var(--accent-tomato)); }
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.neon-line, .gold-line {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-tomato), var(--accent-tomato-light));
+  margin-bottom: 24px;
+  border-radius: 4px;
+  box-shadow: 0 0 12px var(--accent-tomato-glow);
+}
+
+/* ============================================
+   MOBILE RESPONSIVE GLOBALS
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 64px;
+    --section-pad: 48px;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+
+  .btn {
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+}
+
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #2C2C35;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-tomato);
+}
+
+::selection {
+  background: var(--accent-tomato);
+  color: #FFFFFF;
 }

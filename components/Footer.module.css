@@ -1,0 +1,273 @@
+.footer {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* CTA Banner */
+.ctaBanner {
+  background: linear-gradient(135deg, #1e1e1e 0%, #121212 50%, #1a1a1a 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaBanner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(255, 77, 77, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.ctaContent {
+  flex: 1;
+  min-width: 300px;
+}
+
+.ctaHeading {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+.ctaAccent {
+  color: var(--accent-tomato);
+}
+
+.ctaText {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.ctaBtns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+/* Main footer */
+.main {
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 80px);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 60px;
+}
+
+/* Brand col */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-display);
+  font-size: 36px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.logoGiga {
+  color: var(--text-primary);
+}
+
+.logoFit {
+  color: var(--accent-tomato);
+}
+
+.brandText {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  max-width: 300px;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.social {
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.social:hover {
+  background: var(--accent-tomato-dim);
+  border-color: var(--accent-tomato);
+  transform: translateY(-2px);
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contactLink {
+  font-size: 13px;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.contactLink:hover {
+  color: var(--accent-tomato);
+}
+
+.contactAddr {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Link columns */
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.colTitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.colLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.colLink {
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+  line-height: 1.4;
+}
+
+.colLink:hover {
+  color: var(--accent-tomato);
+}
+
+/* Bottom bar */
+.bottom {
+  border-top: 1px solid var(--border-subtle);
+  padding: 24px clamp(20px, 5vw, 80px);
+}
+
+.bottomInner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.copyright {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.bottomLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.bottomLink {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: color var(--transition-fast);
+}
+
+.bottomLink:hover {
+  color: var(--text-secondary);
+}
+
+.tagline {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tomatoDot {
+  color: var(--accent-tomato);
+  font-size: 10px;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .ctaBanner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ctaBtns {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaBtns a {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottomInner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

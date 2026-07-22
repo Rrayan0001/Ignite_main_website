@@ -1,0 +1,222 @@
+.section {
+  background: var(--bg-primary);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Info Column */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  transition: border-color var(--transition-fast);
+}
+
+.infoCard:hover {
+  border-color: var(--accent-tomato);
+}
+
+.infoIcon {
+  font-size: 20px;
+  width: 40px;
+  height: 40px;
+  background: var(--accent-tomato-dim);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.infoTitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  margin-bottom: 8px;
+}
+
+.infoText {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.infoLink {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.infoLink:hover {
+  color: var(--accent-tomato);
+}
+
+.hoursCard {
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+}
+
+.hoursTitle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  margin-bottom: 20px;
+}
+
+.hoursTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hoursRow {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.hoursRow:last-child {
+  border-bottom: none;
+}
+
+.hoursDay {
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--text-secondary);
+  width: 60%;
+}
+
+.hoursTime {
+  padding: 12px 0;
+  font-size: 13px;
+  color: var(--text-primary);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Social */
+.social {
+  padding: 24px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+}
+
+.socialLabel {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  margin-bottom: 16px;
+}
+
+.socialLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+}
+
+.socialLink:hover {
+  border-color: var(--accent-tomato);
+  background: var(--accent-tomato-dim);
+}
+
+.socialIcon {
+  font-size: 20px;
+  width: 36px;
+  height: 36px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.socialName {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.socialHandle {
+  display: block;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* Map Column */
+.mapCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: sticky;
+  top: 100px;
+}
+
+.mapWrap {
+  width: 100%;
+  height: 460px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--border-card);
+  background: var(--bg-card);
+}
+
+.directionsBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapCol {
+    position: static;
+  }
+
+  .mapWrap {
+    height: 320px;
+  }
+}

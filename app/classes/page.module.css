@@ -1,0 +1,149 @@
+.hero {
+  position: relative;
+  margin-top: var(--nav-height);
+  min-height: 380px;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-gym.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 15, 17, 0.6) 0%, rgba(15, 15, 17, 0.95) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+  padding: 40px clamp(20px, 5vw, 80px);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 110px);
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+  margin: 16px 0 20px;
+  color: #FFFFFF;
+}
+
+.heroSub {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.accent { color: var(--accent-tomato); }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 59, 48, 0.4);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cardType {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  background: var(--accent-tomato-dim);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 32px;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.metaGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.metaLabel {
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.metaVal {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    margin-top: 64px;
+    height: auto;
+    min-height: 300px;
+    padding: 32px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

@@ -1,0 +1,138 @@
+.section {
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: 64px;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-card);
+  overflow: hidden;
+  cursor: default;
+  transition: background var(--transition-med);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent-tomato);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--transition-med);
+}
+
+.card:hover {
+  background: var(--bg-card-hover);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card:hover .cardLine {
+  width: 100%;
+}
+
+.cardInner {
+  padding: clamp(28px, 4vw, 48px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  background: var(--accent-tomato-dim);
+  border-radius: 8px;
+  transition: transform var(--transition-fast);
+}
+
+.card:hover .icon {
+  transform: scale(1.08);
+}
+
+.tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent-tomato);
+  background: var(--accent-tomato-dim);
+  padding: 5px 12px;
+  border-radius: 4px;
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.5vw, 28px);
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  flex-grow: 1;
+  margin-bottom: 24px;
+}
+
+.cardLine {
+  width: 32px;
+  height: 2px;
+  background: var(--accent-tomato);
+  transition: width var(--transition-med);
+}
+
+.cta {
+  margin-top: 48px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

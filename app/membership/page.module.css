@@ -1,0 +1,245 @@
+.hero {
+  position: relative;
+  margin-top: var(--nav-height);
+  min-height: 380px;
+  height: 45vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--bg-primary);
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-image: url('/hero-gym.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.heroBg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(15, 15, 17, 0.6) 0%, rgba(15, 15, 17, 0.95) 100%);
+}
+
+.heroContent {
+  position: relative;
+  z-index: 5;
+  padding: 40px clamp(20px, 5vw, 80px);
+  max-width: var(--container-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroTitle {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 110px);
+  line-height: 0.94;
+  letter-spacing: 0.02em;
+  margin: 16px 0 20px;
+  color: #FFFFFF;
+}
+
+.heroSub {
+  font-size: clamp(15px, 1.4vw, 18px);
+  color: var(--text-secondary);
+  max-width: 520px;
+  line-height: 1.65;
+}
+
+.accent { color: var(--accent-tomato); }
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 6px;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.popular {
+  background: var(--bg-primary);
+  border-color: var(--accent-tomato);
+  box-shadow: 0 0 30px var(--accent-tomato-dim);
+}
+
+.popularBadge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-tomato);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.planName {
+  font-family: var(--font-display);
+  font-size: 26px;
+  letter-spacing: 0.06em;
+  color: var(--text-primary);
+}
+
+.saving {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent-tomato);
+  background: var(--accent-tomato-dim);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 40px;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+
+.popular .price {
+  color: var(--accent-tomato);
+}
+
+.planDesc {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  line-height: 1.5;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+  flex-grow: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.check {
+  color: var(--accent-tomato);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.cta {
+  width: 100%;
+  justify-content: center;
+}
+
+/* FAQ */
+.faqSection {
+  background: var(--bg-secondary);
+}
+
+.faqHeader {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faqCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  padding: 32px;
+  border-radius: 6px;
+}
+
+.faqQuestion {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.faqAnswer {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .pricingGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    margin-top: 64px;
+    height: auto;
+    min-height: 300px;
+    padding: 32px 0;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroTitle {
+    font-size: clamp(38px, 10vw, 56px);
+  }
+}
