@@ -82,6 +82,11 @@ ul {
   list-style: none;
 }
 
+p {
+  text-align: justify;
+  text-align-last: left;
+}
+
 /* ============================================
    LAYOUT UTILITIES
    ============================================ */
@@ -146,6 +151,8 @@ ul {
   font-size: clamp(15px, 1.4vw, 18px);
   line-height: 1.7;
   color: var(--text-secondary);
+  text-align: justify;
+  text-align-last: left;
 }
 
 /* ============================================
