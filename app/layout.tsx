@@ -9,10 +9,11 @@ export const metadata: Metadata = {
   keywords: "gym Dharwad, Ignite Fitness Dharwad, Ignite Prime, personal trainer Dharwad, fitness club Dharwad, PB Road gym",
   icons: {
     icon: [
-      { url: '/logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon.png', type: 'image/png' },
     ],
-    apple: [{ url: '/logo.png' }],
-    shortcut: '/logo.png',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.png',
   },
   openGraph: {
     title: "IGNITE FITNESS — Premier Fitness Club Dharwad",
