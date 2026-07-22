@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 import { Menu, X, ArrowUpRight, ShieldAlert } from 'lucide-react';
 import styles from './Navbar.module.css';
 
@@ -18,8 +19,11 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isActive = (href: string) => pathname === href;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
@@ -52,7 +56,11 @@ export default function Navbar() {
         <ul className={styles.links}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={styles.link}>
+              <Link
+                href={link.href}
+                className={`${styles.link} ${isActive(link.href) ? styles.linkActive : ''}`}
+                aria-current={isActive(link.href) ? 'page' : undefined}
+              >
                 {link.label}
               </Link>
             </li>
@@ -87,7 +95,11 @@ export default function Navbar() {
         <ul className={styles.mobileLinks}>
           {navLinks.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} className={styles.mobileLink} onClick={() => setMenuOpen(false)}>
+              <Link
+                href={link.href}
+                className={`${styles.mobileLink} ${isActive(link.href) ? styles.mobileLinkActive : ''}`}
+                onClick={() => setMenuOpen(false)}
+              >
                 {link.label}
               </Link>
             </li>

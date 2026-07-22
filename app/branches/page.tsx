@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import BranchesSection from '@/components/BranchesSection';
 import type { Metadata } from 'next';
 import styles from './page.module.css';
@@ -12,8 +10,6 @@ export const metadata: Metadata = {
 export default function BranchesPage() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -30,8 +26,6 @@ export default function BranchesPage() {
 
       {/* Branches List */}
       <BranchesSection showTitle={false} />
-
-      <Footer />
     </main>
   );
 }

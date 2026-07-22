@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 
@@ -20,8 +18,6 @@ const zones = [
 export default function FacilitiesPage() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -69,8 +65,6 @@ export default function FacilitiesPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

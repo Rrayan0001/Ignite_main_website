@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 
@@ -11,8 +9,6 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <main>
-      <Navbar />
-
       <section className={styles.hero}>
         <div className={styles.container}>
           <p className="label">Legal & Data Protection</p>
@@ -46,8 +42,6 @@ export default function PrivacyPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

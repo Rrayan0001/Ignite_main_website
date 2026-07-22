@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import type { Metadata } from 'next';
 import styles from './page.module.css';
 import Link from 'next/link';
@@ -102,8 +100,6 @@ const faqs = [
 export default function MembershipPage() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -189,8 +185,6 @@ export default function MembershipPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

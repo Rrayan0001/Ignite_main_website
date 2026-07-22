@@ -122,6 +122,14 @@
   width: 100%;
 }
 
+.linkActive {
+  color: var(--accent-tomato);
+}
+
+.linkActive::after {
+  width: 100%;
+}
+
 .adminBadgeLink {
   display: inline-flex;
   align-items: center;
@@ -205,6 +213,10 @@
 }
 
 .mobileLink:hover {
+  color: var(--accent-tomato);
+}
+
+.mobileLinkActive {
   color: var(--accent-tomato);
 }
 

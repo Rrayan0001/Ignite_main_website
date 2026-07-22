@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import TrainersSection from '@/components/TrainersSection';
 import type { Metadata } from 'next';
 import styles from './page.module.css';
@@ -12,8 +10,6 @@ export const metadata: Metadata = {
 export default function TrainersPage() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -29,8 +25,6 @@ export default function TrainersPage() {
       </section>
 
       <TrainersSection />
-
-      <Footer />
     </main>
   );
 }

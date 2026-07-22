@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import {
   getInquiries,
   updateInquiryStatus,
@@ -94,8 +92,6 @@ export default function AdminPage() {
 
   return (
     <main className={styles.main}>
-      <Navbar />
-
       {/* Admin Hero Header */}
       <section className={styles.hero}>
         <div className={styles.container}>
@@ -377,8 +373,6 @@ export default function AdminPage() {
           )}
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

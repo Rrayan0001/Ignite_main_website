@@ -1,5 +1,3 @@
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 import styles from './page.module.css';
 import type { Metadata } from 'next';
 
@@ -34,8 +32,6 @@ const pillars = [
 export default function ConceptPage() {
   return (
     <main>
-      <Navbar />
-
       {/* Hero */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />
@@ -118,8 +114,6 @@ export default function ConceptPage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </main>
   );
 }

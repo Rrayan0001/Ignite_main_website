@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import WelcomeAnimationWrapper from "@/components/WelcomeAnimationWrapper";
 import AosProvider from "@/components/AosProvider";
+import ScrollManager from "@/components/ScrollManager";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import "aos/dist/aos.css";
 import "./globals.css";
 
@@ -38,7 +41,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body suppressHydrationWarning>
         <WelcomeAnimationWrapper />
+        <Navbar />
+        <ScrollManager />
         <AosProvider>{children}</AosProvider>
+        <Footer />
       </body>
     </html>
   );
