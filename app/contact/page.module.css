@@ -90,7 +90,7 @@
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 6px;
+  border-radius: 8px;
   padding: 20px;
   display: flex;
   align-items: flex-start;
@@ -100,6 +100,7 @@
 .cardIcon {
   font-size: 24px;
   flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .cardTitle {
@@ -115,92 +116,113 @@
   line-height: 1.5;
 }
 
-/* Form */
+/* Form Container / Direct Panel */
 .formCol {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: 6px;
-  padding: 40px;
+  border-radius: 12px;
+  padding: 40px 32px;
 }
 
-.form {
+.directPanel {
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
-.inputRow {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.inputGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.formLabel {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
-.input, .select, .textarea {
-  background: var(--bg-primary);
-  border: 1px solid var(--border-subtle);
-  border-radius: 4px;
-  padding: 12px 16px;
-  font-family: var(--font-body);
-  font-size: 14px;
-  color: var(--text-primary);
-  outline: none;
-  transition: border-color var(--transition-fast);
-}
-
-.input:focus, .select:focus, .textarea:focus {
-  border-color: var(--accent-tomato);
-}
-
-.select option {
-  background: var(--bg-primary);
-  color: var(--text-primary);
-}
-
-.textarea {
-  resize: vertical;
-}
-
-.success {
-  text-align: center;
-  padding: 40px 20px;
-}
-
-.successIcon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: var(--accent-tomato-dim);
-  color: var(--accent-tomato);
-  font-size: 28px;
-  margin-bottom: 20px;
-}
-
-.successTitle {
+.directHeading {
   font-family: var(--font-display);
   font-size: 32px;
-  margin-bottom: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.03em;
+  margin: 8px 0;
 }
 
-.successText {
-  font-size: 15px;
+.directSub {
+  font-size: 14px;
   color: var(--text-secondary);
+  margin-bottom: 32px;
+  line-height: 1.5;
+}
+
+.directActions {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.actionBtnWhatsapp {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.4);
+  padding: 20px 22px;
+  border-radius: 8px;
+  color: #25D366;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.actionBtnWhatsapp:hover {
+  background: rgba(37, 211, 102, 0.2);
+  border-color: #25D366;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(37, 211, 102, 0.2);
+}
+
+.actionBtnCall {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(230, 57, 70, 0.1);
+  border: 1px solid rgba(230, 57, 70, 0.4);
+  padding: 20px 22px;
+  border-radius: 8px;
+  color: var(--accent-tomato);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.actionBtnCall:hover {
+  background: rgba(230, 57, 70, 0.2);
+  border-color: var(--accent-tomato);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(230, 57, 70, 0.2);
+}
+
+.actionBtnMap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 20px 22px;
+  border-radius: 8px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.actionBtnMap:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+.actionTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  display: block;
+}
+
+.actionSub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 2px;
 }
 
 @media (max-width: 900px) {
@@ -214,10 +236,6 @@
   .grid {
     grid-template-columns: 1fr;
     gap: 32px;
-  }
-
-  .inputRow {
-    grid-template-columns: 1fr;
   }
 
   .formCol {

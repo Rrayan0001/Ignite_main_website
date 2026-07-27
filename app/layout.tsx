@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import WelcomeAnimationWrapper from "@/components/WelcomeAnimationWrapper";
+import LenisProvider from "@/components/LenisProvider";
 import AosProvider from "@/components/AosProvider";
 import ScrollManager from "@/components/ScrollManager";
 import Navbar from "@/components/Navbar";
@@ -38,13 +39,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html lang="en" suppressHydrationWarning>
       <body suppressHydrationWarning>
         <WelcomeAnimationWrapper />
-        <Navbar />
-        <ScrollManager />
-        <AosProvider>{children}</AosProvider>
-        <Footer />
+        <LenisProvider>
+          <Navbar />
+          <ScrollManager />
+          <AosProvider>{children}</AosProvider>
+          <Footer />
+        </LenisProvider>
       </body>
     </html>
   );

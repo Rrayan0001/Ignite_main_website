@@ -4,10 +4,11 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowUpRight, ShieldAlert } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
+  { label: 'About Us', href: '/about' },
   { label: 'Branches', href: '/branches' },
   { label: 'Concept', href: '/concept' },
   { label: 'Facilities', href: '/facilities' },
@@ -65,12 +66,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link href="/admin" className={styles.adminBadgeLink} id="nav-admin-link">
-              <ShieldAlert size={14} />
-              <span>Admin</span>
-            </Link>
-          </li>
         </ul>
 
         {/* CTA */}
@@ -104,11 +99,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li>
-            <Link href="/admin" className={styles.mobileLink} style={{ color: 'var(--accent-tomato)' }} onClick={() => setMenuOpen(false)}>
-              Admin Panel
-            </Link>
-          </li>
           <li>
             <Link href="/branches" className={`btn btn-primary ${styles.mobileCta}`} onClick={() => setMenuOpen(false)}>
               <span>Join Now</span>

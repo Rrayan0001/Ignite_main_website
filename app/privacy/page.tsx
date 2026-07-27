@@ -3,7 +3,7 @@ import styles from './page.module.css';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy — IGNITE FITNESS Gym Dharwad',
-  description: 'Privacy Policy for Ignite Fitness Gym Dharwad. Learn how we collect, store, and protect member inquiry and registration data.',
+  description: 'Privacy Policy for Ignite Fitness Gym Dharwad. Static website privacy statement.',
 };
 
 export default function PrivacyPage() {
@@ -13,31 +13,31 @@ export default function PrivacyPage() {
         <div className={styles.container}>
           <p className="label">Legal & Data Protection</p>
           <h1 className={styles.title}>PRIVACY <span className={styles.accent}>POLICY</span>.</h1>
-          <p className={styles.sub}>Last updated: July 23, 2026</p>
+          <p className={styles.sub}>Last updated: July 2026</p>
         </div>
       </section>
 
       <section className={styles.bodySection}>
         <div className="container" style={{ maxWidth: 840 }}>
           <div className={styles.contentBox}>
-            <h2>1. Information We Collect</h2>
+            <h2>1. Static Website Statement</h2>
             <p>
-              When you submit an admission inquiry or register for membership at Ignite Fitness Dharwad (Malmaddi or Gandhi Nagar branches), we collect personal information such as your name, phone number, email address, selected gym branch, and fitness goals.
+              The Ignite Fitness Dharwad website operates as a 100% static informational platform. We do not collect, capture, store, or process any personal data, user accounts, or financial details on this website.
             </p>
 
-            <h2>2. How We Use Your Information</h2>
+            <h2>2. Direct Communications</h2>
             <p>
-              Your contact information is strictly used by Ignite Fitness staff to process admission inquiries, schedule 1-on-1 personal training orientations, provide membership updates, and respond to your questions.
+              When you interact with our direct communication channels (such as clicking to call our front desk or messaging us via WhatsApp), your interaction occurs directly through your chosen telecommunication provider or WhatsApp application under their respective privacy policies.
             </p>
 
-            <h2>3. Data Protection & Sharing</h2>
+            <h2>3. Third-Party Links & Maps</h2>
             <p>
-              We do not sell, rent, or trade member data to third parties. All inquiry records are securely handled by authorized Ignite Fitness staff members.
+              Our website provides links to external services such as Google Maps for branch directions and social media platforms. These third-party services operate under their own privacy standards and terms.
             </p>
 
             <h2>4. Contacting Us</h2>
             <p>
-              If you have any questions regarding your personal data or wish to request data removal, please contact our front desk at +91 81979 17330 or visit our PB Road branches in Dharwad.
+              If you have any questions regarding our services or branch locations, please call our front desk directly at +91 81979 17330 or visit our PB Road branches in Malmaddi and Gandhi Nagar, Dharwad.
             </p>
           </div>
         </div>

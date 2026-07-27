@@ -5,10 +5,8 @@ import Link from 'next/link';
 import { MapPin, Phone, Coffee, ArrowUpRight, ShieldCheck, Flame } from 'lucide-react';
 import AdmissionModal from './AdmissionModal';
 import {
-  BRANCH_1_NAME,
   BRANCH_1_ADDRESS,
   BRANCH_1_MAP_EMBED,
-  BRANCH_2_NAME,
   BRANCH_2_ADDRESS,
   BRANCH_2_MAP_EMBED,
   PHONE_NUMBER,
@@ -89,7 +87,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
             </div>
 
             <div className={styles.cardFooter}>
-              <Link href="/branches" className="btn btn-outline" style={{ padding: '12px 18px', fontSize: 12 }}>
+              <Link href="/branches/malmaddi" className="btn btn-outline" style={{ padding: '12px 18px', fontSize: 12 }}>
                 <span>View Details</span>
                 <ArrowUpRight size={14} />
               </Link>
@@ -156,7 +154,7 @@ export default function BranchesSection({ showTitle = true }: BranchesSectionPro
             </div>
 
             <div className={styles.cardFooter}>
-              <Link href="/branches" className="btn btn-outline" style={{ padding: '12px 18px', fontSize: 12 }}>
+              <Link href="/branches/gandhinagar" className="btn btn-outline" style={{ padding: '12px 18px', fontSize: 12 }}>
                 <span>View Details</span>
                 <ArrowUpRight size={14} />
               </Link>

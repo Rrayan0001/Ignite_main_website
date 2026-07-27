@@ -13,6 +13,7 @@ import styles from './Footer.module.css';
 
 const footerLinks = {
   Explore: [
+    { label: 'About Us', href: '/about' },
     { label: 'Our Concept', href: '/concept' },
     { label: 'Facilities', href: '/facilities' },
     { label: 'Training Programs', href: '/classes' },

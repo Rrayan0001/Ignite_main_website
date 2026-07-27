@@ -1,24 +1,23 @@
-'use client';
-
 import styles from './page.module.css';
-import { useState } from 'react';
+import { Phone, MapPin, Clock, MessageSquare, Mail, ExternalLink } from 'lucide-react';
+import { WhatsAppIcon } from '@/components/Icons';
+import {
+  PHONE_NUMBER,
+  PHONE_TEL,
+  WHATSAPP_LINK,
+  BRANCH_1_ADDRESS,
+  BRANCH_2_ADDRESS,
+} from '@/lib/constants';
+
+export const metadata = {
+  title: 'Contact Us — IGNITE FITNESS Gym Dharwad',
+  description: 'Connect directly with Ignite Fitness Dharwad on PB Road. Direct WhatsApp, phone line, and branch locations.',
+};
 
 export default function ContactPage() {
-  const [formState, setFormState] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    branch: 'Malmaddi Branch (Main)',
-    subject: 'General Inquiry',
-    message: '',
-  });
-
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
+  const whatsappUrl = `${WHATSAPP_LINK}?text=${encodeURIComponent(
+    'Hi Ignite Fitness Dharwad, I would like to inquire about membership plans and branch visits.'
+  )}`;
 
   return (
     <main>
@@ -32,7 +31,7 @@ export default function ContactPage() {
             <span className={styles.accent}>TOUCH</span>.
           </h1>
           <p className={styles.heroSub}>
-            Contact us for memberships, free trial sessions, 1-on-1 personal training, or branch visits in Dharwad.
+            Reach out directly for membership details, trial sessions, 1-on-1 personal training, or branch visits in Dharwad.
           </p>
         </div>
       </section>
@@ -49,151 +48,95 @@ export default function ContactPage() {
                 DHARWAD <span className={styles.accentText}>LOCATIONS</span>.
               </h2>
               <p className={styles.infoSubtext}>
-                We operate two prime branches in Dharwad. Contact us directly or visit our desk for a tour.
+                We operate two prime branches in Dharwad on PB Road. Visit our front desk or connect with us directly.
               </p>
 
               <div className={styles.cards}>
                 <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="0">
-                  <span className={styles.cardIcon}>📍</span>
+                  <MapPin className={styles.cardIcon} size={24} color="var(--accent-tomato)" />
                   <div>
                     <h3 className={styles.cardTitle}>Malmaddi Branch (Main)</h3>
-                    <p className={styles.cardText}>
-                      2nd Floor, SP Laxmi Heights, PB Road, near NTTF BRTS Bus Stop, Shanti Nagar, Malmaddi, Dharwad 580001
-                    </p>
+                    <p className={styles.cardText}>{BRANCH_1_ADDRESS}</p>
                   </div>
                 </div>
 
                 <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="100">
-                  <span className={styles.cardIcon}>📍</span>
+                  <MapPin className={styles.cardIcon} size={24} color="var(--accent-gold)" />
                   <div>
                     <h3 className={styles.cardTitle}>Ignite Prime (Gandhi Nagar)</h3>
-                    <p className={styles.cardText}>
-                      4th Floor, Business Center, PB Road, Gandhinagar, Dharwad 580004
-                    </p>
+                    <p className={styles.cardText}>{BRANCH_2_ADDRESS}</p>
                   </div>
                 </div>
 
                 <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="200">
-                  <span className={styles.cardIcon}>📞</span>
+                  <Phone className={styles.cardIcon} size={24} color="var(--accent-tomato)" />
                   <div>
-                    <h3 className={styles.cardTitle}>Phone & Enquiry</h3>
-                    <p className={styles.cardText}>+91 81979 17330</p>
+                    <h3 className={styles.cardTitle}>Phone Line</h3>
+                    <p className={styles.cardText}>{PHONE_NUMBER}</p>
                   </div>
                 </div>
 
                 <div className={`${styles.card} card-press`} data-aos="fade-up" data-aos-delay="300">
-                  <span className={styles.cardIcon}>🕐</span>
+                  <Clock className={styles.cardIcon} size={24} color="#FFFFFF" />
                   <div>
-                    <h3 className={styles.cardTitle}>Hours</h3>
-                    <p className={styles.cardText}>Mon – Sat: 6:00 AM – 11:00 PM | Sun: Closed</p>
+                    <h3 className={styles.cardTitle}>Hours of Operation</h3>
+                    <p className={styles.cardText}>Mon – Sat: 5:30 AM – 10:00 PM | Sun: Closed</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Right: Contact Form */}
+            {/* Right: Direct Connect Action Panel */}
             <div className={styles.formCol} data-aos="fade-left" data-aos-delay="200">
-              {submitted ? (
-                <div className={styles.success}>
-                  <span className={styles.successIcon}>✓</span>
-                  <h3 className={styles.successTitle}>Thank You!</h3>
-                  <p className={styles.successText}>
-                    Your inquiry has been received. Our trainer team will contact you shortly.
-                  </p>
-                  <button onClick={() => setSubmitted(false)} className="btn btn-outline" style={{ marginTop: 16 }}>
-                    Send Another Message
-                  </button>
+              <div className={styles.directPanel}>
+                <p className="label">INSTANT CONNECT</p>
+                <h3 className={styles.directHeading}>CONNECT WITH OUR TEAM</h3>
+                <p className={styles.directSub}>
+                  No forms or waiting required. Connect with our desk instantly via WhatsApp or phone.
+                </p>
+
+                <div className={styles.directActions}>
+                  {/* WhatsApp */}
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.actionBtnWhatsapp}
+                  >
+                    <WhatsAppIcon size={26} />
+                    <div>
+                      <span className={styles.actionTitle}>Chat on WhatsApp</span>
+                      <span className={styles.actionSub}>Instant reply & trial booking</span>
+                    </div>
+                    <ExternalLink size={18} />
+                  </a>
+
+                  {/* Direct Call */}
+                  <a href={`tel:${PHONE_TEL}`} className={styles.actionBtnCall}>
+                    <Phone size={24} />
+                    <div>
+                      <span className={styles.actionTitle}>Call {PHONE_NUMBER}</span>
+                      <span className={styles.actionSub}>Speak directly to front desk</span>
+                    </div>
+                    <ExternalLink size={18} />
+                  </a>
+
+                  {/* Map Directions */}
+                  <a
+                    href="https://maps.google.com/?q=SP+Laxmi+Heights+PB+Road+Malmaddi+Dharwad"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.actionBtnMap}
+                  >
+                    <MapPin size={24} />
+                    <div>
+                      <span className={styles.actionTitle}>Get Directions on Google Maps</span>
+                      <span className={styles.actionSub}>PB Road, Malmaddi & Gandhi Nagar</span>
+                    </div>
+                    <ExternalLink size={18} />
+                  </a>
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className={styles.form}>
-                  <div className={styles.inputGroup}>
-                    <label htmlFor="name" className={styles.formLabel}>Full Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      required
-                      value={formState.name}
-                      onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      placeholder="John Doe"
-                      className={styles.input}
-                    />
-                  </div>
-
-                  <div className={styles.inputRow}>
-                    <div className={styles.inputGroup}>
-                      <label htmlFor="email" className={styles.formLabel}>Email Address</label>
-                      <input
-                        type="email"
-                        id="email"
-                        required
-                        value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                        placeholder="john@example.com"
-                        className={styles.input}
-                      />
-                    </div>
-                    <div className={styles.inputGroup}>
-                      <label htmlFor="phone" className={styles.formLabel}>Phone Number</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        required
-                        value={formState.phone}
-                        onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
-                        className={styles.input}
-                      />
-                    </div>
-                  </div>
-
-                  <div className={styles.inputRow}>
-                    <div className={styles.inputGroup}>
-                      <label htmlFor="branch" className={styles.formLabel}>Preferred Branch</label>
-                      <select
-                        id="branch"
-                        value={formState.branch}
-                        onChange={(e) => setFormState({ ...formState, branch: e.target.value })}
-                        className={styles.select}
-                      >
-                        <option>Malmaddi Branch (Main)</option>
-                        <option>Ignite Prime (Gandhi Nagar)</option>
-                      </select>
-                    </div>
-                    <div className={styles.inputGroup}>
-                      <label htmlFor="subject" className={styles.formLabel}>Subject</label>
-                      <select
-                        id="subject"
-                        value={formState.subject}
-                        onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                        className={styles.select}
-                      >
-                        <option>General Inquiry</option>
-                        <option>Book Free Trial Session</option>
-                        <option>Membership Plan Rates</option>
-                        <option>1-on-1 Personal Training</option>
-                        <option>Nutrition & Diet Coaching</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div className={styles.inputGroup}>
-                    <label htmlFor="message" className={styles.formLabel}>Message</label>
-                    <textarea
-                      id="message"
-                      required
-                      rows={5}
-                      value={formState.message}
-                      onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      placeholder="Tell us about your fitness goals..."
-                      className={styles.textarea}
-                    />
-                  </div>
-
-                  <button type="submit" className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-                    Send Inquiry
-                  </button>
-                </form>
-              )}
+              </div>
             </div>
           </div>
         </div>

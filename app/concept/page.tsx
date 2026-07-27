@@ -60,12 +60,10 @@ export default function ConceptPage() {
             </div>
             <div data-aos="fade-left" data-aos-delay="200">
               <p className={styles.missionText}>
-                Ignite Fitness was established on PB Road, Dharwad to bring international-standard strength equipment,
-                biomechanics-based personal coaching, and structured conditioning to fitness enthusiasts.
+                Founded in January 2025 on PB Road, Dharwad, Ignite Fitness was established to empower every individual to become the strongest, healthiest version of themselves through international-standard strength equipment, biomechanics-based personal coaching, and structured conditioning.
               </p>
               <p className={styles.missionText}>
-                Across our locations in Malmaddi and Gandhi Nagar, Ignite Fitness offers an invigorating environment
-                tailored for body transformation, muscle gain, fat loss, and athletic performance.
+                Across our locations in Malmaddi and Gandhi Nagar, Ignite Fitness offers an invigorating, judgment-free environment tailored for body transformation, muscle gain, fat loss, and athletic performance.
               </p>
             </div>
           </div>

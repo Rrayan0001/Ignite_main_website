@@ -34,14 +34,14 @@ export default function ConceptSection() {
           </h2>
 
           <p className={styles.body} data-aos="fade-up" data-aos-delay="300">
-            Ignite Fitness is Dharwad's top-rated fitness center (4.9★ rating). We believe that real
-            body transformations are achieved through scientific biomechanics, structured progressive
-            overload, and dedicated 1-on-1 certified personal coaching across our modern branches in Dharwad.
+            Founded in January 2025, Ignite Fitness is Dharwad's top-rated fitness center (4.9★ rating).
+            We believe that real transformations are achieved through scientific biomechanics, structured progressive
+            overload, and dedicated 1-on-1 certified coaching across our branches in Dharwad.
           </p>
 
           <p className={styles.body} data-aos="fade-up" data-aos-delay="400">
             From heavy dumbbell racks (2.5kg to 60+kg) and Olympic lifting platforms to precision cardio units
-            and high-intensity CrossFit functional arenas, Ignite Fitness provides an empowering sanctuary for beginners and elite lifters alike.
+            and high-intensity CrossFit functional arenas, Ignite Fitness provides an empowering, judgment-free sanctuary for everyone.
           </p>
 
           <div className={styles.pillars}>
@@ -62,10 +62,16 @@ export default function ConceptSection() {
             ))}
           </div>
 
-          <Link href="/concept" className="btn btn-outline" id="concept-learn-btn">
-            <span>Learn More</span>
-            <ArrowUpRight size={16} />
-          </Link>
+          <div style={{ display: 'flex', gap: 12, marginTop: 24, flexWrap: 'wrap' }}>
+            <Link href="/about" className="btn btn-primary" id="concept-about-btn">
+              <span>About Us & Founder</span>
+              <ArrowUpRight size={16} />
+            </Link>
+            <Link href="/concept" className="btn btn-outline" id="concept-learn-btn">
+              <span>Our Concept</span>
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

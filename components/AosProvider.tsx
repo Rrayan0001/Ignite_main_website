@@ -15,6 +15,9 @@ export default function AosProvider({ children }: { children: React.ReactNode })
       offset: 80,
       disable: false,
     });
+
+    const id = requestAnimationFrame(() => AOS.refresh());
+    return () => cancelAnimationFrame(id);
   }, []);
 
   useEffect(() => {
