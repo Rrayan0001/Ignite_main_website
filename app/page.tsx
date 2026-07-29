@@ -7,6 +7,7 @@ import ClassesSection from '@/components/ClassesSection';
 import MembershipSection from '@/components/MembershipSection';
 import TrainersSection from '@/components/TrainersSection';
 import GallerySection from '@/components/GallerySection';
+import AchievementsSection from '@/components/AchievementsSection';
 import LocationSection from '@/components/LocationSection';
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <MembershipSection />
       <TrainersSection />
       <GallerySection />
+      <AchievementsSection />
       <LocationSection />
     </main>
   );

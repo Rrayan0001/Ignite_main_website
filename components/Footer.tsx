@@ -18,6 +18,7 @@ const footerLinks = {
     { label: 'Facilities', href: '/facilities' },
     { label: 'Training Programs', href: '/classes' },
     { label: '1-on-1 Coaching', href: '/trainers' },
+    { label: 'Achievements & Milestones', href: '/achievements' },
     { label: 'CrossFit Arena', href: '/facilities' },
   ],
   Membership: [
