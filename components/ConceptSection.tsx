@@ -34,7 +34,7 @@ export default function ConceptSection() {
           </h2>
 
           <p className={styles.body} data-aos="fade-up" data-aos-delay="300">
-            Founded in January 2025, Ignite Fitness is Dharwad's top-rated fitness center (4.9★ rating).
+            Founded in January 2025, Ignite Fitness is Dharwad&apos;s top-rated fitness center (4.9★ rating).
             We believe that real transformations are achieved through scientific biomechanics, structured progressive
             overload, and dedicated 1-on-1 certified coaching across our branches in Dharwad.
           </p>

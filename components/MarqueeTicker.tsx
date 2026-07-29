@@ -1,6 +1,6 @@
 'use client';
 
-import { Flame, Dumbbell, ShieldCheck, Zap } from 'lucide-react';
+import { Flame } from 'lucide-react';
 import styles from './MarqueeTicker.module.css';
 
 const marqueeItems = [

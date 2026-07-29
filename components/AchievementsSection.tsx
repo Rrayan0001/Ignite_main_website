@@ -1,6 +1,6 @@
 'use client';
 
-import { Trophy, Award, Users, Star, ShieldCheck, Flame } from 'lucide-react';
+import { Trophy, Award, Users, ShieldCheck, Flame } from 'lucide-react';
 import styles from './AchievementsSection.module.css';
 
 const stats = [

@@ -68,7 +68,7 @@ export default function TestimonialsSection() {
           </div>
 
           <p className={styles.quote} key={active}>
-            "{t.text}"
+            &ldquo;{t.text}&rdquo;
           </p>
 
           <div className={styles.author}>

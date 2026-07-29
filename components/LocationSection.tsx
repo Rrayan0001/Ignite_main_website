@@ -8,8 +8,6 @@ import {
   BRANCH_1_ADDRESS,
   BRANCH_2_ADDRESS,
   BRANCH_1_MAP_EMBED,
-  OPERATING_HOURS_WEEKDAY,
-  OPERATING_HOURS_SUNDAY,
 } from '@/lib/constants';
 import styles from './LocationSection.module.css';
 

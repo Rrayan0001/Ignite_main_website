@@ -42,7 +42,7 @@ export default function ConceptPage() {
             <span className={styles.accent}>POTENTIAL</span>.
           </h1>
           <p className={styles.heroSub}>
-            Dharwad's high-performance fitness destination where biomechanics, strength and certified coaching meet.
+            Dharwad&apos;s high-performance fitness destination where biomechanics, strength and certified coaching meet.
           </p>
         </div>
       </section>

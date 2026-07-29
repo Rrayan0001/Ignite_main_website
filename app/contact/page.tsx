@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import { Phone, MapPin, Clock, MessageSquare, Mail, ExternalLink } from 'lucide-react';
+import { Phone, MapPin, Clock, ExternalLink } from 'lucide-react';
 import { WhatsAppIcon } from '@/components/Icons';
 import {
   PHONE_NUMBER,

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ShieldCheck, Dumbbell, Users, Target, Award, ArrowUpRight, Sparkles, Briefcase } from 'lucide-react';
+import { Dumbbell, Users, Target, Award, ArrowUpRight, Sparkles } from 'lucide-react';
 import styles from './page.module.css';
 
 export const metadata: Metadata = {

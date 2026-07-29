@@ -24,7 +24,7 @@ export default function FacilitiesPage() {
         <div className={styles.heroContent} data-aos="fade-up">
           <p className="label">World-Class Facilities</p>
           <h1 className={styles.heroTitle}>
-            DHARWAD'S PREMIER<br />
+            DHARWAD&apos;S PREMIER<br />
             <span className={styles.accent}>TRAINING ZONES</span>.
           </h1>
         </div>

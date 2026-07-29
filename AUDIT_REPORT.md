@@ -5,7 +5,7 @@ Generated: July 23, 2026
 ## Overview
 
 - **Framework**: Next.js 16.2.11 (App Router)
-- **Total Routes**: 12 (`/`, `/branches`, `/concept`, `/facilities`, `/classes`, `/membership`, `/trainers`, `/gallery`, `/contact`, `/admin`, `/privacy`, `/terms`)
+- **Total Routes**: 16 (`/`, `/about`, `/achievements`, `/branches`, `/branches/malmaddi`, `/branches/gandhinagar`, `/concept`, `/facilities`, `/classes`, `/membership`, `/trainers`, `/gallery`, `/contact`, `/privacy`, `/terms`)
 - **Internal Links Audited**: 35+
 - **External Links Audited**: 8
 
@@ -48,6 +48,6 @@ Generated: July 23, 2026
 | `/trainers` | `app/trainers/page.tsx` | OK |
 | `/gallery` | `app/gallery/page.tsx` | OK |
 | `/contact` | `app/contact/page.tsx` | OK |
-| `/admin` | `app/admin/page.tsx` | OK |
 | `/privacy` | `app/privacy/page.tsx` | OK |
+| `/achievements` | `app/achievements/page.tsx` | OK |
 | `/terms` | `app/terms/page.tsx` | OK |

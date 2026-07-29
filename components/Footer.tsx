@@ -83,7 +83,7 @@ export default function Footer() {
               <span className={styles.logoFit}>FITNESS</span>
             </Link>
             <p className={styles.brandText}>
-              Dharwad's premier high-performance fitness club. Biomechanics-based 1-on-1 coaching, heavy iron strength training, and athletic conditioning.
+              Dharwad&apos;s premier high-performance fitness club. Biomechanics-based 1-on-1 coaching, heavy iron strength training, and athletic conditioning.
             </p>
             <div className={styles.socials}>
               {socials.map(({ Icon, label, href }) => (
